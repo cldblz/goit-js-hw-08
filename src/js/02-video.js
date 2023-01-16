@@ -12,12 +12,12 @@ function onTimeUpdate(e) {
 
 const currentTime = localStorage.getItem("videoplayer-current-time")
 
-player.setCurrentTime(currentTime).then(function(seconds) {
-}).catch(function(error) {
-    switch (error.name) {
-        case 'RangeError':
-            break;
-        default:
-            break;
+setCurrentTime(currentTime)
+
+function setCurrentTime(time) {
+    if (!time) {
+        return
     }
-});
+
+    player.setCurrentTime(time)
+}
