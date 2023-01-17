@@ -7,11 +7,11 @@ const data = {
     email: "",
     message: ""
 }
-const hasFeedback = localStorage.getItem("feedback-form-state")
+const inputValues = localStorage.getItem("feedback-form-state")
 
-if (hasFeedback) {
+if (inputValues) {
     try {
-        const parsedFeedback = JSON.parse(hasFeedback);
+        const parsedFeedback = JSON.parse(inputValues);
         emailRef.value = parsedFeedback.email;
         messageRef.value = parsedFeedback.message;
         data.email = parsedFeedback.email;
